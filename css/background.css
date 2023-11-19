@@ -1,0 +1,38 @@
+/* 媒体查询，屏幕太窄了显示背景图片也无用 */
+/* @media (min-width: 992px){ */
+     /* body 处理 */
+    /* .body-class{ */
+      /* 背景图片的地址 */
+      /* background: url(https://api.dujin.org/bing/1920.php); */
+      /* 不重复 */
+      /* background-repeat: no-repeat; */
+      /* 背景图像的位置固定 */
+      /* background-attachment: fixed; */
+      /* 背景居中 */
+      /* background-position: 50% 50%; */
+      /* 全部覆盖 如果图片小会拉伸，图片大会压缩*/
+      /* background-size: cover;
+    }
+  } */
+
+  @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#web_bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    background: url(https://imgapi.jinghuashang.cn/random);
+  /* 背景图像不重复 */
+  background-repeat: no-repeat;
+  /* 背景图像大小 */
+  background-size: cover;
+}
