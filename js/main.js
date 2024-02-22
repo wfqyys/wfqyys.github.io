@@ -488,8 +488,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ele.forEach(item => {
         item.classList.contains("url")
           ? fetchUrl(item.textContent).then(res => {
-              runJustifiedGallery(item, res);
-            })
+            runJustifiedGallery(item, res);
+          })
           : runJustifiedGallery(item, JSON.parse(item.textContent));
       });
     };
@@ -843,7 +843,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $body.classList.add("read-mode");
       const newEle = document.createElement("button");
       newEle.type = "button";
-      newEle.className = "fas fa-sign-out-alt exit-readmode";
+      newEle.className = "anzhiyufont anzhiyu-icon-xmark exit-readmode";
       $body.appendChild(newEle);
 
       const clickFn = () => {
