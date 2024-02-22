@@ -23764,6 +23764,10 @@ body[data-type="essay"] #page .author-content-item .card-content .banner-button-
   height: 40px !important;
   margin: 0 !important;
 }
+/* 您可以在这里添加新的样式规则 */
+#bber-talk .li-style {
+  font-size: 40%;
+}
 
 #bbTimeList {
   background: var(--anzhiyu-white);
