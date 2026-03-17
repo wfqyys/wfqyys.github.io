@@ -24,6 +24,7 @@ html.dark body {
     -moz-user-select: none;
     user-select: none;
     overflow: hidden;
+    --loading-progress: 0%;
 }
 
 .loading-bar img {
@@ -39,12 +40,26 @@ html.dark body {
     top: 500px;
     left: 0;
     filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
-    width: 500px;
+    width: var(--loading-progress, 0%);
     height: 62.5px;
     background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
     background-size: 500px 62.5px;
     background-position-x: 0;
-    animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
+    /* 移除无限循环动画，改用CSS变量控制宽度 */
+    transition: width 0.3s ease-out;
+    max-width: 500px;
+}
+
+/* 进度文字样式 */
+.loading-progress-text {
+    position: absolute;
+    top: calc(50% + 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: var(--loadingbar-prospect-color, #666666);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 719px) {
@@ -63,17 +78,6 @@ html.dark body {
 @supports not (filter: drop-shadow(0 0 0 #fff)) {
     .loading-bar:before {
         content: "Your browser does not support the animation";
-    }
-}
-
-@keyframes loading-bar {
-    0% {
-        width: 0;
-        background-size: 500px 62.5px;
-    }
-
-    100% {
-        width: 500px;
     }
 }
 
