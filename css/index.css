@@ -9536,6 +9536,53 @@ h1.page-title + .tag-cloud-list {
   margin-top: 20px;
   padding: 20px 24px;
 }
+#aside-content .card-widget.card-author {
+  background: -webkit-linear-gradient(315deg, #ffb6c1 0%, #87ceeb 100% /* 蓝色 */);
+  background: -moz-linear-gradient(315deg, #ffb6c1 0%, #87ceeb 100% /* 蓝色 */);
+  background: -o-linear-gradient(315deg, #ffb6c1 0%, #87ceeb 100% /* 蓝色 */);
+  background: -ms-linear-gradient(315deg, #ffb6c1 0%, #87ceeb 100% /* 蓝色 */);
+  background: linear-gradient(135deg, #ffb6c1 0%, #87ceeb 100% /* 蓝色 */);
+  position: relative;
+  overflow: hidden;
+}
+#aside-content .card-widget.card-author::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -moz-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -o-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -ms-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  -webkit-transition: left 0.5s;
+  -moz-transition: left 0.5s;
+  -o-transition: left 0.5s;
+  -ms-transition: left 0.5s;
+  transition: left 0.5s;
+  z-index: 0;
+}
+#aside-content .card-widget.card-author:hover::before {
+  left: 100%;
+}
+#aside-content .card-widget.card-author .author-info__name,
+#aside-content .card-widget.card-author .author-info__desc,
+#aside-content .card-widget.card-author .author-info__description {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+#aside-content .card-widget.card-author .author-info-avatar {
+  position: relative;
+  z-index: 1;
+}
+#aside-content .card-widget.card-author .card-info-social-icons {
+  position: relative;
+  z-index: 1;
+}
 #aside-content .card-widget .author-info__bottom-group {
   display: -webkit-box;
   display: -moz-box;
@@ -19859,6 +19906,12 @@ p.p.gray {
   --toc-link-color: rgba(255,255,255,0.6);
   --scrollbar-color: #1f1f1f;
   --timeline-bg: #1f1f1f;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #909090;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --bg-tertiary: #3a3a3a;
 }
 [data-theme='dark'] #web_bg:before,
 [data-theme='dark'] #footer:before,
