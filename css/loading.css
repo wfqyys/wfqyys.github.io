@@ -1,4 +1,4 @@
-/* 加载动画样式 - 恢复原有版本 */
+/* 加载动画样式 - 实现进度同步 */
 /* :root {
     --loadingbar-background-color: #f5f5f5;
     --loadingbar-prospect-color: #666666;
@@ -25,6 +25,7 @@ html.dark body {
     -moz-user-select: none;
     user-select: none;
     overflow: hidden;
+    --progress-width: 0px; /* CSS变量，由JS控制 */
 }
 
 .loading-bar img {
@@ -40,12 +41,12 @@ html.dark body {
     top: 500px;
     left: 0;
     filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
-    width: 500px;
+    width: var(--progress-width, 0px); /* 使用CSS变量控制进度 */
     height: 62.5px;
     background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
     background-size: 500px 62.5px;
     background-position-x: 0;
-    animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
+    transition: width 0.1s ease-out; /* 平滑过渡 */
 }
 
 @media screen and (max-width: 719px) {
@@ -64,17 +65,6 @@ html.dark body {
 @supports not (filter: drop-shadow(0 0 0 #fff)) {
     .loading-bar:before {
         content: "Your browser does not support the animation";
-    }
-}
-
-@keyframes loading-bar {
-    0% {
-        width: 0;
-        background-size: 500px 62.5px;
-    }
-
-    100% {
-        width: 500px;
     }
 }
 
