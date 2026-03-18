@@ -124,7 +124,7 @@
       <link href="/2023/10/c02f32772b20.html/"/>
       <url>/2023/10/c02f32772b20.html/</url>
       
-        <content type="html"><![CDATA[<h1>基于安知鱼的hexo魔改：侧边栏的小人</h1><div class="note primary simple"><p>2023/11/06 fix:干扰其他的css,手动拖动后还能自己继续转动</p></div><p>灵感来源：<a href="https://www.code-gray.com/2022/12/29/Hexo%E9%AD%94%E6%94%B9%E4%B9%8B%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/">code-gray</a><br>在[BlogRoot]/themes/anzhiyu/layout/includes/widget/card_announcement.pug 下添加如下部分代码。<br>若遇到重复代码，优先保留原代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.xpand(style=&#x27;height:200px;&#x27;)</span><br><span class="line">    canvas.illo(width=&#x27;800&#x27; height=&#x27;800&#x27; style=&#x27;max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;&#x27;)</span><br><span class="line">script(src=&#x27;https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople1.js&#x27;)</span><br><span class="line">script(src=&#x27;https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/zdog.dist.js&#x27;)</span><br><span class="line">script#rendered-js(src=&#x27;https://npm.wfqyys.cn/js/twoPeople.js&#x27;)</span><br><span class="line">style.</span><br><span class="line"> .card-widget.card-announcement &#123;</span><br><span class="line"> margin: 0;</span><br><span class="line"> align-items: center;</span><br><span class="line"> justify-content: center;</span><br><span class="line"> text-align: center;</span><br><span class="line"> &#125;</span><br><span class="line"> .xpand canvas &#123;</span><br><span class="line"> display: block;</span><br><span class="line"> margin: 0 auto;</span><br><span class="line"> cursor: move;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p>ok ,结束，快hexo三连看看效果吧！</p>]]></content>
+        <content type="html"><![CDATA[<h1>基于安知鱼的hexo魔改：侧边栏的小人</h1><div class="note primary simple"><p>2023/11/06 fix:干扰其他的css,手动拖动后还能自己继续转动</p></div><p>灵感来源：<a href="https://www.code-gray.com/2022/12/29/Hexo%E9%AD%94%E6%94%B9%E4%B9%8B%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/">code-gray</a><br>在[BlogRoot]/themes/anzhiyu/layout/includes/widget/card_announcement.pug 下添加如下部分代码。<br>若遇到重复代码，优先保留原代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.xpand(style=&#x27;height:200px;&#x27;)</span><br><span class="line">    canvas.illo(width=&#x27;800&#x27; height=&#x27;800&#x27; style=&#x27;max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;&#x27;)</span><br><span class="line">script(src=&#x27;https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople1.js&#x27;)</span><br><span class="line">script(src=&#x27;https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/zdog.dist.js&#x27;)</span><br><span class="line">script#rendered-js(src=&#x27;https://obs.wfqyys.cn/js/twoPeople.js&#x27;)</span><br><span class="line">style.</span><br><span class="line"> .card-widget.card-announcement &#123;</span><br><span class="line"> margin: 0;</span><br><span class="line"> align-items: center;</span><br><span class="line"> justify-content: center;</span><br><span class="line"> text-align: center;</span><br><span class="line"> &#125;</span><br><span class="line"> .xpand canvas &#123;</span><br><span class="line"> display: block;</span><br><span class="line"> margin: 0 auto;</span><br><span class="line"> cursor: move;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p>ok ,结束，快hexo三连看看效果吧！</p>]]></content>
       
       
       <categories>
@@ -170,35 +170,6 @@
             <tag> hexo </tag>
             
             <tag> anzhiyu </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Ubuntu安装Nginx</title>
-      <link href="/2023/10/8d78e5691f99.html/"/>
-      <url>/2023/10/8d78e5691f99.html/</url>
-      
-        <content type="html"><![CDATA[<h2 id="步骤1：更新系统">步骤1：更新系统</h2><p>首先，打开终端并运行以下命令，以确保您的系统是最新的：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure><h2 id="步骤2：安装Nginx">步骤2：安装Nginx</h2><p>安装Nginx非常简单。在终端中运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure><p>您将看到一个确认提示，按<code>“Y”</code>键继续安装。安装过程可能需要一些时间。</p><h2 id="步骤3：启动Nginx并设置开机启动">步骤3：启动Nginx并设置开机启动</h2><p>安装完成后，Nginx已经自动启动。您可以使用以下命令来检查Nginx的状态：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure><p>如果Nginx没有启动，您可以使用以下命令手动启动它：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure><p>为了确保Nginx在系统启动时自动启动，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure><h2 id="步骤4：配置防火墙">步骤4：配置防火墙</h2><p>如果您的服务器上启用了防火墙，您需要允许HTTP流量通过。默认情况下，Nginx使用HTTP的80端口。运行以下命令来允许HTTP流量：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="string">&#x27;Nginx HTTP&#x27;</span></span><br></pre></td></tr></table></figure><p>然后重启防火墙：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure><h2 id="步骤5：访问Nginx默认页面">步骤5：访问Nginx默认页面</h2><p>现在，您可以通过浏览器访问您的服务器的IP地址或域名来查看Nginx的默认欢迎页面。只需输入服务器的IP地址或域名，然后您将看到Nginx的欢迎页面。</p><p>恭喜，您已经成功安装并配置了Nginx！您可以在 <code>/etc/nginx</code> 目录下找到Nginx的配置文件，以进行进一步的自定义配置。</p><p>希望这个教程对您有所帮助！如果您需要更多高级配置，可以参考Nginx的官方文档。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Ubuntu </tag>
-            
-            <tag> Docker </tag>
-            
-            <tag> 学习 </tag>
             
         </tags>
       
@@ -255,6 +226,35 @@
             <tag> hexo </tag>
             
             <tag> anzhiyu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu安装Nginx</title>
+      <link href="/2023/10/8d78e5691f99.html/"/>
+      <url>/2023/10/8d78e5691f99.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="步骤1：更新系统">步骤1：更新系统</h2><p>首先，打开终端并运行以下命令，以确保您的系统是最新的：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure><h2 id="步骤2：安装Nginx">步骤2：安装Nginx</h2><p>安装Nginx非常简单。在终端中运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure><p>您将看到一个确认提示，按<code>“Y”</code>键继续安装。安装过程可能需要一些时间。</p><h2 id="步骤3：启动Nginx并设置开机启动">步骤3：启动Nginx并设置开机启动</h2><p>安装完成后，Nginx已经自动启动。您可以使用以下命令来检查Nginx的状态：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure><p>如果Nginx没有启动，您可以使用以下命令手动启动它：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure><p>为了确保Nginx在系统启动时自动启动，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure><h2 id="步骤4：配置防火墙">步骤4：配置防火墙</h2><p>如果您的服务器上启用了防火墙，您需要允许HTTP流量通过。默认情况下，Nginx使用HTTP的80端口。运行以下命令来允许HTTP流量：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="string">&#x27;Nginx HTTP&#x27;</span></span><br></pre></td></tr></table></figure><p>然后重启防火墙：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure><h2 id="步骤5：访问Nginx默认页面">步骤5：访问Nginx默认页面</h2><p>现在，您可以通过浏览器访问您的服务器的IP地址或域名来查看Nginx的默认欢迎页面。只需输入服务器的IP地址或域名，然后您将看到Nginx的欢迎页面。</p><p>恭喜，您已经成功安装并配置了Nginx！您可以在 <code>/etc/nginx</code> 目录下找到Nginx的配置文件，以进行进一步的自定义配置。</p><p>希望这个教程对您有所帮助！如果您需要更多高级配置，可以参考Nginx的官方文档。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Docker </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
