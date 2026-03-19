@@ -178,6 +178,35 @@
     
     
     <entry>
+      <title>Ubuntu安装Nginx</title>
+      <link href="/2023/10/8d78e5691f99.html/"/>
+      <url>/2023/10/8d78e5691f99.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="步骤1：更新系统">步骤1：更新系统</h2><p>首先，打开终端并运行以下命令，以确保您的系统是最新的：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure><h2 id="步骤2：安装Nginx">步骤2：安装Nginx</h2><p>安装Nginx非常简单。在终端中运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure><p>您将看到一个确认提示，按<code>“Y”</code>键继续安装。安装过程可能需要一些时间。</p><h2 id="步骤3：启动Nginx并设置开机启动">步骤3：启动Nginx并设置开机启动</h2><p>安装完成后，Nginx已经自动启动。您可以使用以下命令来检查Nginx的状态：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure><p>如果Nginx没有启动，您可以使用以下命令手动启动它：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure><p>为了确保Nginx在系统启动时自动启动，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure><h2 id="步骤4：配置防火墙">步骤4：配置防火墙</h2><p>如果您的服务器上启用了防火墙，您需要允许HTTP流量通过。默认情况下，Nginx使用HTTP的80端口。运行以下命令来允许HTTP流量：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="string">&#x27;Nginx HTTP&#x27;</span></span><br></pre></td></tr></table></figure><p>然后重启防火墙：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure><h2 id="步骤5：访问Nginx默认页面">步骤5：访问Nginx默认页面</h2><p>现在，您可以通过浏览器访问您的服务器的IP地址或域名来查看Nginx的默认欢迎页面。只需输入服务器的IP地址或域名，然后您将看到Nginx的欢迎页面。</p><p>恭喜，您已经成功安装并配置了Nginx！您可以在 <code>/etc/nginx</code> 目录下找到Nginx的配置文件，以进行进一步的自定义配置。</p><p>希望这个教程对您有所帮助！如果您需要更多高级配置，可以参考Nginx的官方文档。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Docker </tag>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS上Hexo的安装教程</title>
       <link href="/2023/10/d4d9d36aa435.html/"/>
       <url>/2023/10/d4d9d36aa435.html/</url>
@@ -226,35 +255,6 @@
             <tag> hexo </tag>
             
             <tag> anzhiyu </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Ubuntu安装Nginx</title>
-      <link href="/2023/10/8d78e5691f99.html/"/>
-      <url>/2023/10/8d78e5691f99.html/</url>
-      
-        <content type="html"><![CDATA[<h2 id="步骤1：更新系统">步骤1：更新系统</h2><p>首先，打开终端并运行以下命令，以确保您的系统是最新的：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure><h2 id="步骤2：安装Nginx">步骤2：安装Nginx</h2><p>安装Nginx非常简单。在终端中运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure><p>您将看到一个确认提示，按<code>“Y”</code>键继续安装。安装过程可能需要一些时间。</p><h2 id="步骤3：启动Nginx并设置开机启动">步骤3：启动Nginx并设置开机启动</h2><p>安装完成后，Nginx已经自动启动。您可以使用以下命令来检查Nginx的状态：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure><p>如果Nginx没有启动，您可以使用以下命令手动启动它：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure><p>为了确保Nginx在系统启动时自动启动，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure><h2 id="步骤4：配置防火墙">步骤4：配置防火墙</h2><p>如果您的服务器上启用了防火墙，您需要允许HTTP流量通过。默认情况下，Nginx使用HTTP的80端口。运行以下命令来允许HTTP流量：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow <span class="string">&#x27;Nginx HTTP&#x27;</span></span><br></pre></td></tr></table></figure><p>然后重启防火墙：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure><h2 id="步骤5：访问Nginx默认页面">步骤5：访问Nginx默认页面</h2><p>现在，您可以通过浏览器访问您的服务器的IP地址或域名来查看Nginx的默认欢迎页面。只需输入服务器的IP地址或域名，然后您将看到Nginx的欢迎页面。</p><p>恭喜，您已经成功安装并配置了Nginx！您可以在 <code>/etc/nginx</code> 目录下找到Nginx的配置文件，以进行进一步的自定义配置。</p><p>希望这个教程对您有所帮助！如果您需要更多高级配置，可以参考Nginx的官方文档。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Ubuntu </tag>
-            
-            <tag> Docker </tag>
-            
-            <tag> 学习 </tag>
             
         </tags>
       
