@@ -2685,7 +2685,7 @@ i.anzhiyu-icon-hashtag {
   --tab-button-active-bg: #fff;
   --card-bg: #fff;
   --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #ff7242;
+  --btn-hover-color: #f7c5d9;
   --btn-color: #fff;
   --btn-bg: var(--anzhiyu-main);
   --text-bg-hover: rgba(66,90,239,0.7);
@@ -2699,7 +2699,7 @@ i.anzhiyu-icon-hashtag {
   --toc-link-color: #666261;
   --card-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
   --card-hover-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.09);
-  --pseudo-hover: #ff7242;
+  --pseudo-hover: #f7c5d9;
   --headline-presudo: var(--anzhiyu-fontcolor);
   --scrollbar-color: var(--anzhiyu-scrollbar);
   --anzhiyu-snackbar-time: 2000ms;
@@ -2762,15 +2762,15 @@ i.anzhiyu-icon-hashtag {
 [data-theme="light"] {
   --anzhiyu-meta-theme-post-color: #fff;
   --anzhiyu-meta-theme-color: #f7f9fe;
-  --anzhiyu-theme-op-deep: rgba(66,89,239,0.867);
+  --anzhiyu-theme-op-deep: rgba(197,217,247,0.867);
   --global-bg: #f7f9fe;
-  --anzhiyu-theme: #425aef;
-  --anzhiyu-theme-deep: #1856fb;
-  --anzhiyu-theme-op: rgba(66,89,239,0.137);
-  --anzhiyu-blue: #5ca1ff;
-  --anzhiyu-blue-tint: rgba(92,161,255,0.1);
-  --anzhiyu-red: #d8213c;
-  --anzhiyu-pink: #ff7c7c;
+  --anzhiyu-theme: #c5d9f7;
+  --anzhiyu-theme-deep: #b5c9f7;
+  --anzhiyu-theme-op: rgba(197,217,247,0.137);
+  --anzhiyu-blue: #c5d9f7;
+  --anzhiyu-blue-tint: rgba(197,217,247,0.1);
+  --anzhiyu-red: #f7c5d9;
+  --anzhiyu-pink: #f7c5d9;
   --anzhiyu-green: #57bd6a;
   --anzhiyu-fontcolor: #363636;
   --anzhiyu-background: #f7f9fe;
@@ -2805,12 +2805,12 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-blue-tint: rgba(92,161,255,0.1);
   --anzhiyu-theme-op-deep: rgba(0,132,255,0.867);
   --global-bg: #18171d;
-  --anzhiyu-theme: #f2b94b;
-  --anzhiyu-theme-deep: #0076e5;
-  --anzhiyu-theme-op: rgba(242,185,75,0.137);
-  --anzhiyu-blue: #0084ff;
-  --anzhiyu-red: #ff3842;
-  --anzhiyu-pink: #ff7c7c;
+  --anzhiyu-theme: #8a9db8;
+  --anzhiyu-theme-deep: #7a8da8;
+  --anzhiyu-theme-op: rgba(138,157,184,0.137);
+  --anzhiyu-blue: #8a9db8;
+  --anzhiyu-red: #b89a9d;
+  --anzhiyu-pink: #b89a9d;
   --anzhiyu-green: #57bd6a;
   --anzhiyu-fontcolor: #f7f7fa;
   --anzhiyu-background: #18171d;
@@ -3052,6 +3052,82 @@ img:not([src]) {
 }
 .img-alt:hover {
   text-decoration: none !important;
+}
+#page-header.nav-fixed {
+  background: var(--gradient-pink-blue-light) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+button,
+.btn-beautify,
+.button--primary,
+#article-container .btn-anzhiyu:not(.outline) {
+  background: var(--gradient-pink-blue-light) !important;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+button:hover,
+.btn-beautify:hover,
+.button--primary:hover,
+#article-container .btn-anzhiyu:not(.outline):hover {
+  background: var(--gradient-pink-blue-hover) !important;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(197,217,247,0.4);
+  box-shadow: 0 4px 12px rgba(197,217,247,0.4);
+}
+a:hover {
+  background-image: var(--gradient-pink-blue-transparent);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+}
+.cardHover,
+#recent-posts > .recent-post-item,
+#aside-content .card-widget,
+.error404 #error-wrap .error-content,
+.layout > .recent-posts .pagination > *:not(.space):not(pangu) {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.cardHover:hover,
+#recent-posts > .recent-post-item:hover,
+#aside-content .card-widget:hover,
+.error404 #error-wrap .error-content:hover,
+.layout > .recent-posts .pagination > *:not(.space):not(pangu):hover {
+  -webkit-border-image: var(--gradient-pink-blue-light) 1;
+  -moz-border-image: var(--gradient-pink-blue-light) 1;
+  -o-border-image: var(--gradient-pink-blue-light) 1;
+  border-image: var(--gradient-pink-blue-light) 1;
+  -webkit-box-shadow: 0 8px 16px rgba(197,217,247,0.2);
+  box-shadow: 0 8px 16px rgba(197,217,247,0.2);
+}
+.pagination .page-number.current,
+.pagination .extend.current {
+  background: var(--gradient-pink-blue-light) !important;
+}
+.pagination .page-number:hover,
+.pagination .extend:hover {
+  background: var(--gradient-pink-blue-hover) !important;
+}
+.tag-cloud-tags a:hover,
+.article-tag-list-item a:hover {
+  background: var(--gradient-pink-blue-light) !important;
+  color: var(--card-text-primary) !important;
+}
+.toc-item.active a {
+  background: var(--gradient-pink-blue-light) !important;
+  color: var(--card-text-primary) !important;
+}
+#random-banner:hover #random-hover {
+  background: var(--gradient-pink-blue-light) !important;
 }
 blockquote {
   margin: 0 0 20px;
@@ -7664,7 +7740,7 @@ body[data-type="games"] #page .page-title {
   margin-right: 8px;
 }
 #recent-posts > .recent-post-item >.recent-post-info .sticky-warp .sticky {
-  color: #ff7242;
+  color: #f7c5d9;
   font-size: 12px;
 }
 @media screen and (max-width: 768px) {
@@ -10664,19 +10740,26 @@ h1.page-title + .tag-cloud-list {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  z-index: 2;
 }
 .banners-title-big {
   font-size: 36px;
-  line-height: 1;
+  line-height: 1.2;
   font-weight: bold;
   margin-bottom: 8px;
+  color: var(--card-text-primary);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
 }
 .banners-title-small {
   font-size: 12px;
   line-height: 1;
-  color: var(--anzhiyu-secondtext);
+  color: var(--card-text-secondary);
   margin-top: 8px;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 .banner-button {
   padding: 8px 12px;
@@ -10756,10 +10839,10 @@ h1.page-title + .tag-cloud-list {
   background: #f6f8fa;
 }
 #post-comment .comment-head .comment-switch .first-comment {
-  color: #425aef;
+  color: #c5d9f7;
 }
 #post-comment .comment-head .comment-switch .second-comment {
-  color: #ff7242;
+  color: #f7c5d9;
 }
 #post-comment .comment-head .comment-switch #switch-btn {
   position: relative;
@@ -10768,7 +10851,7 @@ h1.page-title + .tag-cloud-list {
   width: 42px;
   height: 22px;
   border-radius: 34px;
-  background-color: #425aef;
+  background-color: #c5d9f7;
   vertical-align: middle;
   cursor: pointer;
   -webkit-transition: 0.4s;
@@ -10803,7 +10886,7 @@ h1.page-title + .tag-cloud-list {
   display: none;
 }
 #post-comment.move #switch-btn {
-  background-color: #ff7242;
+  background-color: #f7c5d9;
 }
 #post-comment.move #switch-btn:before {
   -webkit-transform: translateX(20px);
@@ -12564,7 +12647,7 @@ h1.page-title + .tag-cloud-list {
   display: flex;
   width: 100%;
   height: 76%;
-  background: var(--anzhiyu-card-bg);
+  background: var(--gradient-pink-blue-light);
   margin-bottom: 0.5rem;
   border: var(--style-border);
   border-radius: 12px;
@@ -12586,16 +12669,43 @@ h1.page-title + .tag-cloud-list {
   transition: 0.3s;
   will-change: transform;
 }
+#random-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -moz-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -o-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: -ms-linear-gradient(0deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  z-index: 1;
+}
 #random-banner:hover {
   -webkit-box-shadow: var(--anzhiyu-shadow-main);
   box-shadow: var(--anzhiyu-shadow-main);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+#random-banner:hover::before {
+  left: 100%;
 }
 #random-banner:hover #random-hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
   padding-left: 2rem;
-  background: var(--anzhiyu-theme-op-deep);
+  background: var(--gradient-pink-blue-hover);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   -webkit-transform: translateZ(0);
@@ -16913,7 +17023,7 @@ li.card-category-list-item {
 #waline-wrap {
   --waline-font-size: 1.1em;
   --waline-theme-color: var(--anzhiyu-main);
-  --waline-active-color: #ff7242;
+  --waline-active-color: #f7c5d9;
 }
 #waline-wrap .vuser {
   -webkit-transition: all 0.5s;
@@ -23634,6 +23744,7 @@ body[data-type="essay"] #web_bg {
   display: flex;
   flex-direction: column;
   text-align: justify;
+  word-break: break-all;
 }
 #bber p {
   margin: 0px;
