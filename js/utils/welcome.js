@@ -1,5 +1,5 @@
-// 欢迎信息显示脚本 - 使用ip-api.com API
-// API文档: https://ip-api.com/docs/api:json
+// 欢迎信息显示脚本 - 使用api.ip.sb API
+// API文档: https://api.ip.sb/geoip/
 
 let ipLocation = null;
 
@@ -20,8 +20,8 @@ const defaultLocation = {
 
 // 获取IP位置信息
 function fetchLocation() {
-    // 使用ip-api.com的API（免费版，每分钟45次请求限制）
-    fetch('http://ip-api.com/json/?lang=zh-CN', {
+    // 使用api.ip.sb的API（支持HTTPS，无请求限制）
+    fetch('https://api.ip.sb/geoip/', {
         method: 'GET'
     })
         .then(response => {
@@ -31,13 +31,23 @@ function fetchLocation() {
             return response.json();
         })
         .then(data => {
-            if (data.status === 'success') {
-                ipLocation = data;
-                console.log('IP定位成功:', ipLocation);
-                showWelcome();
-            } else {
-                throw new Error('API返回失败状态');
-            }
+            // 将api.ip.sb的响应格式转换为ip-api.com的格式
+            ipLocation = {
+                query: data.ip,
+                country: data.country,
+                countryCode: data.country_code,
+                region: data.region_code,
+                regionName: data.region,
+                city: data.city,
+                district: "",
+                lat: data.latitude,
+                lon: data.longitude,
+                timezone: data.timezone,
+                isp: data.isp,
+                status: 'success'
+            };
+            console.log('IP定位成功:', ipLocation);
+            showWelcome();
         })
         .catch(error => {
             console.log('IP定位API不可用，使用默认位置:', error.message);
