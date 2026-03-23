@@ -1,0 +1,235 @@
+/**
+ * 原神风格进度条样式
+ * 实现基于pace.js的实际加载进度显示
+ * 支持亮色/暗色模式切换
+ */
+
+/* ========== CSS变量定义 ========== */
+:root {
+  /* 进度条尺寸 */
+  --loadingbar-width: 500px;
+  --loadingbar-height: 62.5px;
+  --loadingbar-scale: 0.8;
+  
+  /* 亮色模式配色 */
+  --loadingbar-background-color: #f5f5f5;
+  --loadingbar-prospect-color: #666666;
+  
+  /* 动画参数 */
+  --loadingbar-transition-duration: 0.1s;
+  --loadingbar-fade-duration: 0.5s;
+  
+  /* 遮罩层 - 纯白背景，完全遮挡未加载的页面 */
+  --loading-bg-opacity: 1;
+  --loading-bg-color: #ffffff;
+}
+
+/* ========== 暗色模式配色 ========== */
+html.dark {
+  --loadingbar-background-color: #2c2b30;
+  --loadingbar-prospect-color: #ece5d8;
+  --loading-bg-color: #161d22;
+}
+
+/* ========== 加载容器 ========== */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: block;
+  opacity: 1;
+  transition: opacity var(--loadingbar-fade-duration) ease-out;
+  pointer-events: all;
+}
+
+/* 加载完成后的淡出效果 */
+.loading-container.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ========== 背景遮罩 ========== */
+.loading-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--loading-bg-color);
+  opacity: var(--loading-bg-opacity);
+  z-index: 1; /* 背景层 */
+}
+
+/* ========== 进度条容器 ========== */
+.loading-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--loadingbar-width);
+  height: var(--loadingbar-height);
+  transform: translate(-50%, -50%) scale(var(--loadingbar-scale));
+  transition: all var(--loadingbar-fade-duration);
+  z-index: 2; /* 进度条层，显示在背景之上 */
+  
+  /* 禁止用户选择 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  /* 隐藏溢出内容 */
+  overflow: hidden;
+  
+  /* GPU加速 */
+  will-change: transform;
+  
+  /* CSS变量，由JS控制进度 */
+  --progress-width: 0px;
+}
+
+/* ========== 进度条背景图片 ========== */
+.loading-bar img {
+  position: absolute;
+  top: 500px; /* 使用drop-shadow技巧 */
+  left: 0;
+  width: var(--loadingbar-width);
+  height: var(--loadingbar-height);
+  
+  /* 使用drop-shadow实现颜色填充效果 */
+  filter: drop-shadow(0 -500px 0 var(--loadingbar-background-color));
+  
+  /* 禁用拖拽 */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+}
+
+/* ========== 进度填充效果（使用伪元素） ========== */
+.loading-bar::after {
+  content: "";
+  position: absolute;
+  top: 500px; /* 与背景图片对齐 */
+  left: 0;
+  width: var(--progress-width, 0px); /* 由JS控制的进度宽度 */
+  height: var(--loadingbar-height);
+  
+  /* 进度填充背景 */
+  background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
+  background-size: var(--loadingbar-width) var(--loadingbar-height);
+  background-position-x: 0;
+  
+  /* 使用drop-shadow实现前景色填充 */
+  filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
+  
+  /* 平滑过渡动画 */
+  transition: width var(--loadingbar-transition-duration) ease-out;
+  
+  /* GPU加速 */
+  will-change: width;
+}
+
+/* ========== 响应式设计 ========== */
+
+/* 移动端竖屏 */
+@media screen and (max-width: 719px) {
+  .loading-bar {
+    /* 移动端隐藏或缩小 */
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+/* 移动端横屏 */
+@media screen and (max-width: 719px) and (orientation: landscape) {
+  .loading-bar {
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+}
+
+/* 平板设备 */
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .loading-bar {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+}
+
+/* ========== 浏览器兼容性降级 ========== */
+
+/* 不支持drop-shadow的浏览器 */
+@supports not (filter: drop-shadow(0 0 0 #fff)) {
+  .loading-bar::before {
+    content: "您的浏览器不支持此动画效果";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--loadingbar-prospect-color);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  .loading-bar img,
+  .loading-bar::after {
+    display: none;
+  }
+}
+
+/* ========== 性能优化 ========== */
+
+/* 启用硬件加速 */
+.loading-bar,
+.loading-bar img,
+.loading-bar::after {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* 减少重绘 */
+.loading-bar {
+  contain: layout style paint;
+}
+
+/* ========== 无障碍支持 ========== */
+
+/* 屏幕阅读器支持 - 确保进度条可被屏幕阅读器识别 */
+.loading-bar[role="progressbar"] {
+  outline: none;
+}
+
+/* 高对比度模式 */
+@media screen and (-ms-high-contrast: active) {
+  .loading-bar {
+    border: 2px solid currentColor;
+  }
+  
+  .loading-bar::after {
+    background: currentColor;
+  }
+}
+
+/* 减少动画模式（用户偏好） */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bar,
+  .loading-bar::after,
+  .loading-container {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ========== 调试模式（可选） ========== */
+/*
+.debug-mode .loading-bar {
+  border: 1px dashed red;
+}
+
+.debug-mode .loading-bar::after {
+  outline: 1px solid blue;
+}
+*/
