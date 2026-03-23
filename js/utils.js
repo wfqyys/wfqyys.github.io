@@ -921,6 +921,11 @@ const anzhiyu = {
       anzhiyu.changeMusicList();
     });
 
+    // 默认加载的歌单
+    if (GLOBAL_CONFIG.music_page_default === "custom") {
+      anzhiyu.changeMusicList();
+    }
+
     // 监听键盘事件
     //空格控制音乐
     document.addEventListener("keydown", function (event) {
@@ -1041,15 +1046,15 @@ const anzhiyu = {
 
     function dr_js_autofill_commentinfos() {
       var lauthor = [
-          "#author",
-          "input[name='comname']",
-          "#inpName",
-          "input[name='author']",
-          "#ds-dialog-name",
-          "#name",
-          "input[name='nick']",
-          "#comment_author",
-        ],
+        "#author",
+        "input[name='comname']",
+        "#inpName",
+        "input[name='author']",
+        "#ds-dialog-name",
+        "#name",
+        "input[name='nick']",
+        "#comment_author",
+      ],
         lmail = [
           "#mail",
           "#email",
